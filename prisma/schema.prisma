@@ -29,7 +29,7 @@ model BarbershopService {
   id           String     @id @default(uuid())
   name         String
   description  String
-  imgageUrl    String
+  imageUrl     String
   barebrshopId String
   barbershop   Barbershop @relation(fields: [barebrshopId], references: [id])
   priceInCents Int
