@@ -42,6 +42,8 @@ model Booking {
   id           String    @id @default(uuid())
   serviceId    String
   barbershopId String
+  userId String
+  user User @relation(fields: [userId], references: [id])
   date         DateTime  @db.Timestamptz
   cancelled    Boolean?  @default(false)
   cancelledAt  DateTime? @db.Timestamptz
@@ -57,6 +59,7 @@ model User {
   updatedAt     DateTime  @default(now()) @updatedAt
   sessions      Session[]
   accounts      Account[]
+  bookings      Booking[]
 
   @@unique([email])
   @@map("user")
