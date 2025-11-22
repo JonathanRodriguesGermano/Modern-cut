@@ -4,29 +4,40 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 
 interface BookingItemProps {
   serviceName: string;
-  barbeshopName: string;
-  barbeshopImageUrl: string;
+  barbershopName: string;
+  barbershopImageUrl: string;
   date: Date;
+  status: "confirmed" | "finished";
 }
+
 const BookingItem = ({
   serviceName,
-  barbeshopName,
-  barbeshopImageUrl,
+  barbershopName,
+  barbershopImageUrl,
   date,
+  status,
 }: BookingItemProps) => {
   return (
     <Card className="flex h-full w-full min-w-full flex-row items-center justify-between p-0">
       {/* ESQUERDA */}
       <div className="flex flex-1 flex-col gap-4 p-4">
-        <Badge>Confirmado</Badge>
+        <Badge
+          className={
+            status === "confirmed"
+              ? "bg-primary/10 text-primary uppercase"
+              : "bg-muted text-muted-foreground uppercase"
+          }
+        >
+          {status === "confirmed" ? "Confirmado" : "Finalizado"}
+        </Badge>
 
         <div className="flex flex-col gap-2">
           <p className="font-bold">{serviceName}</p>
           <div className="flex items-center gap-2">
             <Avatar className="h-6 w-6">
-              <AvatarImage src={barbeshopImageUrl} />
+              <AvatarImage src={barbershopImageUrl} />
             </Avatar>
-            <p className="text-muted-foreground text-sm">{barbeshopName}</p>
+            <p className="text-sm">{barbershopName}</p>
           </div>
         </div>
       </div>
