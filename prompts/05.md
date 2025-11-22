@@ -1,0 +1,14 @@
+## Tarefa
+
+- Criar um sheet de cancelamento de reserva que é exibido quando o usuário clica no @app/\_components/booking-item.tsx.
+- A interface deve ser EXATAMENTE a que está no Figma em https://www.figma.com/design/KBlNBjp5XXWUj64ZCiT9lq/Aparatus?node-id=78-2076&m=dev.
+- Ao clicar no botão de "Cancelar reserva" a reserva deve ser cancelada.
+
+## Requisitos Técnicos
+
+- Use o Sheet do shadcn/ui.
+- Crie uma server action de cancelar a reserva chamada "cancel-booking" que recebe o ID da reserva e define booking.cancelled = true.
+- Os dados exibidos no Sheet devem ser os mesmos dados do agendamento clicado.
+- A imagem do mapa está em @public/map.png.
+- Status é confirmado se agendamento é no futuro e finalizado se é no passado.
+- Reutilize o componente @app/\_components/phone-item.tsx para os números de telefone.

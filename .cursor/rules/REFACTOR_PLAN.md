@@ -1,0 +1,1 @@
+- Colocar variantes na Badge
