@@ -41,16 +41,17 @@ model BarbershopService {
 // Agendamento 
 
 model Booking {
-  id           String            @id @default(uuid())
-  serviceId    String
-  service      BarbershopService @relation(fields: [serviceId], references: [id])
-  barbershopId String
-  barbershop   Barbershop        @relation(fields: [barbershopId], references: [id])
-  userId       String
-  user         User              @relation(fields: [userId], references: [id])
-  date         DateTime          @db.Timestamptz
-  cancelled    Boolean?          @default(false)
-  cancelledAt  DateTime?         @db.Timestamptz
+  id             String            @id @default(uuid())
+  serviceId      String
+  service        BarbershopService @relation(fields: [serviceId], references: [id])
+  barbershopId   String
+  barbershop     Barbershop        @relation(fields: [barbershopId], references: [id])
+  userId         String
+  user           User              @relation(fields: [userId], references: [id])
+  date           DateTime          @db.Timestamptz
+  cancelled      Boolean?          @default(false)
+  cancelledAt    DateTime?         @db.Timestamptz
+  stripeChargeId String?
 }
 
 model User {

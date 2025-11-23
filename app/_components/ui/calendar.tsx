@@ -38,7 +38,7 @@ function Calendar({
       formatters={{
         formatMonthDropdown: (date) =>
           date.toLocaleString("default", { month: "short" }),
-        formatCaption: (date, options) => {
+        formatCaption: (date) => {
           // Aqui garantimos que mostre apenas o mês
           return date.toLocaleString("pt-BR", {month: "long"});
         },

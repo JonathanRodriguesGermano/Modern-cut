@@ -1,0 +1,7 @@
+Em @app/api/stripe/webhook/route.ts é necessário você salvar o stripeChargeId ao criar a transação.
+
+Use Context7 para buscar na documentação do Stripe como recuperar o chargeId em @app/api/stripe/webhook/route.ts.
+
+Após isso, no caso de cancelamento de reserva, faça o estorno no Stripe em @app/\_actions/cancel-booking.ts. Use Context7 para buscar na documentação do Stripe como fazer isso.
+
+Use a biblioteca "stripe".
