@@ -15,6 +15,7 @@ Tecnologias utilizadas:
 - shadcn/ui
 - Tailwind CSS
 - BetterAuth para autenticação.
+- Stripe para pagamentos.
 
 - SEMPRE use shadcn como biblioteca de componentes
 - SEMPRE use componentes que estão em @app/\_components/ui/page.tsx
