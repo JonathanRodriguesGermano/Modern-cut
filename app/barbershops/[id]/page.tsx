@@ -32,8 +32,10 @@ const BarbershopPage = async (props: PageProps<"/barbershops/[id]">) => {
             src={barbershop.imageUrl}
             alt={barbershop.name}
             fill
-            className="object-cover"
+            className="object-cover opacity-100"
           />
+          {/* Dica: Um gradiente escuro ajuda o botão de voltar a aparecer */}
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
         {/* Botão Voltar */}
@@ -52,7 +54,7 @@ const BarbershopPage = async (props: PageProps<"/barbershops/[id]">) => {
       </div>
 
       {/* Container Principal */}
-      <div className="bg-background w-full flex-1 rounded-tl-3xl rounded-tr-3xl">
+      <div className="relative z-10 -mt-5 bg-background w-full flex-1 rounded-t-3xl">
         {/* Informações da Barbearia */}
         <div className="flex w-full items-center gap-1.5 px-5 pt-6 pb-0">
           <div className="flex flex-col items-start gap-1">
