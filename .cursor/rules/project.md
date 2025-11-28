@@ -16,6 +16,7 @@ Tecnologias utilizadas:
 - Tailwind CSS
 - BetterAuth para autenticação.
 - Stripe para pagamentos.
+- AI para IA. uasndo a ia do google gemini-2.0-flash 
 
 - SEMPRE use shadcn como biblioteca de componentes
 - SEMPRE use componentes que estão em @app/\_components/ui/page.tsx
