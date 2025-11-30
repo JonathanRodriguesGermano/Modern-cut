@@ -4,12 +4,10 @@ import { Streamdown } from "streamdown";
 
 interface ChatMessageProps {
   message: UIMessage;
-  isStreaming?: boolean;
 }
 
 export const ChatMessage = ({ 
   message, 
-  isStreaming = false,
 }: ChatMessageProps) => {
   const isUser = message.role === "user";
   const isSystem = message.role === "system";
@@ -52,7 +50,7 @@ export const ChatMessage = ({
           <Bot className="size-3.5 text-primary" />
         </div>
        <div className="text-foreground max-w-full text-sm leading-[1.4] font-normal break-words whitespace-normal">
-          <Streamdown isAnimating={isStreaming}>{content}</Streamdown>
+          <Streamdown>{content}</Streamdown>
         </div>
       </div>
     </div>

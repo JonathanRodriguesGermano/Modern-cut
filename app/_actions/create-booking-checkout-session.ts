@@ -41,7 +41,7 @@ export const createBookingCheckoutSession = actionClient
       });
     }
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: "2025-07-30.basil",
+      apiVersion: "2025-11-17.clover",
     });
     const checkoutSession = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

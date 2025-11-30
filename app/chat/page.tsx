@@ -79,13 +79,10 @@ export default function ChatPage() {
           ? INITIAL_MESSAGES.map((msg) => (
               <ChatMessage key={msg.id} message={msg} />
             ))
-          : messages.map((msg, index) => (
+          : messages.map((msg) => (
            <ChatMessage 
            key={msg.id} 
            message={msg} 
-           isStreaming= {
-            status === "streaming" && index === messages.length - 1
-           }           
            />
            ))}
         <div ref={messagesEndRef} />
