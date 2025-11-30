@@ -40,6 +40,8 @@ export default function ChatPage() {
     }),
   });
 
+  console.log({ messages });
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -77,7 +79,15 @@ export default function ChatPage() {
           ? INITIAL_MESSAGES.map((msg) => (
               <ChatMessage key={msg.id} message={msg} />
             ))
-          : messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+          : messages.map((msg, index) => (
+           <ChatMessage 
+           key={msg.id} 
+           message={msg} 
+           isStreaming= {
+            status === "streaming" && index === messages.length - 1
+           }           
+           />
+           ))}
         <div ref={messagesEndRef} />
       </div>
 
