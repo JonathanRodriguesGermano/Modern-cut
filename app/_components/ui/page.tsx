@@ -1,6 +1,10 @@
 // component to wrap the entire page content
 export const PageContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className="space-y-6 p-5">{children}</div>;
+  return (
+    <div className="space-y-6 p-5 md:container md:mx-auto md:px-8">
+      {children}
+    </div>
+  );
 };
 
 // component for page section titles
@@ -10,7 +14,7 @@ export const PageSectionTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h2 className="text-foreground text-xs font-semibold uppercase">
+    <h2 className="text-foreground text-xs md:text-2xl font-semibold uppercase">
       {children}
     </h2>
   );
@@ -21,14 +25,14 @@ export const PageSection = ({ children }: { children: React.ReactNode }) => {
   return <div className="space-y-3">{children}</div>;
 };
 
- // component to wrap horizontally scrollable sections
+// component to wrap horizontally scrollable sections
 export const PageSectionScroller = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
   return (
-    <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+    <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-4 md:overflow-visible [&::-webkit-scrollbar]:hidden">
       {children}
     </div>
   );

@@ -62,7 +62,7 @@ function Calendar({
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none static bg-gray-200",
+          "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none static bg-gray-200 dark:bg-neutral-600",
           defaultClassNames.button_next
         ),
         month_caption: cn(

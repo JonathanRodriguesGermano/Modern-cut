@@ -152,7 +152,7 @@ export function ServiceItem({ service }: ServiceItemProps) {
                 {priceInReais}
               </p>
               <SheetTrigger asChild>
-                <Button className="rounded-full px-4 py-2">Reservar</Button>
+                <Button className="rounded-full px-4 py-2 cursor-pointer">Reservar</Button>
               </SheetTrigger>
             </div>
           </div>

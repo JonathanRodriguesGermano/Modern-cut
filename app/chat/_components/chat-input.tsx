@@ -25,7 +25,7 @@ export const ChatInput = ({
   };
 
   return (
-    <div className="bg-muted absolute bottom-0 left-0 flex w-full flex-col gap-2.5 p-5">
+    <div className="flex w-full flex-col gap-2.5">
       <div className="flex w-full gap-2">
         <Input
           value={input}

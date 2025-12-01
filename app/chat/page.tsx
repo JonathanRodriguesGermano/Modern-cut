@@ -40,7 +40,6 @@ export default function ChatPage() {
     }),
   });
 
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -63,36 +62,39 @@ export default function ChatPage() {
 
   return (
     <div className="relative flex h-screen w-full flex-col overflow-hidden rounded-[20px] bg-[var(--background)]">
-      <div className="flex w-[390px] items-center justify-between pb-0 pl-5 pr-5 pt-6">
-        <Link href="/">
-          <ChevronLeft className="size-6 shrink-0" />
-        </Link>
-        <p className="font-merriweather whitespace-pre text-nowrap text-[20px] italic leading-[1.4] tracking-[-1px] text-[var(--foreground)]">
-          Hydra
-        </p>
-        <div className="flex items-center justify-end gap-[15px]" />
+      <div className="border-b border-gray-200/10 bg-[var(--background)]">
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-4 py-4">
+          <Link href="/" className="transition-opacity hover:opacity-70">
+            <ChevronLeft className="size-6 shrink-0 text-[var(--foreground)]" />
+          </Link>
+          <p className="font-merriweather text-[20px] leading-[1.4] tracking-[-1px] text-nowrap whitespace-pre text-[var(--foreground)] italic">
+            Hydra
+          </p>
+          <div className="flex items-center justify-end gap-[15px]" />
+        </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto pb-24 [&::-webkit-scrollbar]:hidden">
-        {messages.length === 0
-          ? INITIAL_MESSAGES.map((msg) => (
-              <ChatMessage key={msg.id} message={msg} />
-            ))
-          : messages.map((msg) => (
-           <ChatMessage 
-           key={msg.id} 
-           message={msg} 
-           />
-           ))}
-        <div ref={messagesEndRef} />
+      <div className="w-full flex-1 overflow-y-auto scroll-smooth [&::-webkit-scrollbar]:hidden">
+        <div className="mx-auto flex w-full max-w-3xl flex-col px-4 pt-6 pb-32 [&::-webkit-scrollbar]:hidden">
+          {messages.length === 0
+            ? INITIAL_MESSAGES.map((msg) => (
+                <ChatMessage key={msg.id} message={msg} />
+              ))
+            : messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+          <div ref={messagesEndRef} />
+        </div>
       </div>
 
-      <ChatInput
-        input={message}
-        onChange={(e) => setMessage(e.target.value)}
-        onSubmit={handleSubmit}
-        isLoading={isLoading}
-      />
+      <div className="w-full bg-[var(--background)] p-4">
+        <div className="mx-auto w-full max-w-3xl">
+          <ChatInput
+            input={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onSubmit={handleSubmit}
+            isLoading={isLoading}
+          />
+        </div>
+      </div>
     </div>
   );
 }

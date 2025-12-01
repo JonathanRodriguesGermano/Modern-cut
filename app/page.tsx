@@ -13,6 +13,7 @@ import {
   PageSectionTitle,
 } from "./_components/ui/page";
 import QuickSearchButtons from "./_components/quick-search-buttons";
+import { Button } from "./_components/ui/button";
 
 const Home = async () => {
   const recommendedBarbershops = await prisma.barbershop.findMany({
@@ -31,13 +32,37 @@ const Home = async () => {
       <PageContainer>
         <SearchInput />
         <QuickSearchButtons />
-        <Image
-          src={banner}
-          alt="Agende agora!"
-          sizes="100vw"
-          className="h-auto w-full"
-        />
-        
+
+        {/* sessao banner */}
+        <div className="mt-6 flex flex-col items-center gap-5 md:flex-row md:items-stretch">
+          {/* Lado direito banner */}
+          <div className="w-full flex-1">
+            <Image
+              src={banner}
+              alt="Agende agora!"
+              sizes="100vw"
+              className="h-auto w-full rounded-xl object-cover md:w-xl"
+            />
+          </div>
+
+          {/* Lado esquerdo banner */}
+          <div className="text-card-foreground hidden flex-1 flex-col justify-center p-8 md:flex">
+            <h2 className="mb-3 text-3xl leading-tight font-bold">
+              Seu próximo corte,{" "}
+              <span className="text-primary">agora mesmo!</span>
+            </h2>
+            <p className="text-muted-foreground mb-6 text-lg">
+              Encontre os profissionais mais{" "}
+              <span className="font-semibold text-yellow-500">
+                bem avaliados
+              </span>{" "}
+              da sua região e garanta seu horário sem espera.
+            </p>
+            <Button className="w-full font-bold uppercase md:w-auto">
+              Agendar Horário
+            </Button>
+          </div>
+        </div>
 
         <PageSection>
           <PageSectionTitle>Recomendados</PageSectionTitle>
@@ -56,7 +81,6 @@ const Home = async () => {
             ))}
           </PageSectionScroller>
         </PageSection>
-
       </PageContainer>
       <Footer />
     </main>

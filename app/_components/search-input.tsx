@@ -17,7 +17,7 @@ const SearchInput = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="flex w-full items-center gap-2">
       <Input
         type="text"
         placeholder="Pesquise serviços ou barbearias..."
@@ -29,7 +29,7 @@ const SearchInput = () => {
         type="submit"
         variant="default"
         size="icon"
-        className="rounded-full"
+        className="rounded-full cursor-pointer"
       >
         <SearchIcon />
       </Button>
