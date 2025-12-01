@@ -105,6 +105,6 @@ stripe listen --forward-to localhost:3000/api/webhooks/stripe
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um Pull Request.
 
 ## 📝 Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Feito com 💜 por Jonatan Germano
